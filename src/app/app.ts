@@ -1,12 +1,50 @@
-import { Component, signal } from '@angular/core';
-import { RouterLink,RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+
+import {
+
+  Router,
+
+  RouterLink,
+
+  RouterOutlet
+
+} from '@angular/router';
+
 
 @Component({
+
   selector: 'app-root',
-  imports: [RouterLink,RouterOutlet ],
+
+  standalone: true,
+
+  imports: [
+
+    RouterOutlet,
+
+    RouterLink
+
+  ],
+
   templateUrl: './app.html',
+
   styleUrl: './app.css'
+
 })
+
 export class App {
-  protected readonly title = signal('week4');
+
+  constructor(private router: Router) {}
+
+
+  logout() {
+
+    // Remove logged-in user.
+    localStorage.removeItem('currentUser');
+
+
+    // Return to login.
+    this.router.navigate(['/login']);
+
+  }
+
 }

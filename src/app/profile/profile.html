@@ -1,7 +1,73 @@
-<h1>ProfilePage</h1>
+<h2>User Profile</h2>
 
-<img
-  src="https://via.placeholder.com/300"
-  alt="Profile image"
-  class="img-fluid"
->
+
+<div>
+
+  <label>Username:</label>
+
+  <input
+    type="text"
+    [(ngModel)]="user.username"
+    name="username"
+  >
+
+</div>
+
+
+<br>
+
+
+<div>
+
+  <label>Birthdate:</label>
+
+  <input
+    type="text"
+    [(ngModel)]="user.birthdate"
+    name="birthdate"
+  >
+
+</div>
+
+
+<br>
+
+
+<div>
+
+  <label>Age:</label>
+
+  <input
+    type="number"
+    [(ngModel)]="user.age"
+    name="age"
+  >
+
+</div>
+
+
+<br>
+
+
+<div>
+
+  <label>Email:</label>
+
+  <input
+    type="email"
+    [(ngModel)]="user.email"
+    name="email"
+  >
+
+</div>
+
+
+<br>
+
+
+<button (click)="saveProfile()">
+  Save Profile
+</button>
+
+
+<p>{{ message }}</p>
